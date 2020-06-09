@@ -3,19 +3,19 @@ require_relative 'lib/omniauth-webflow/version'
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-webflow"
   spec.version       = Omniauth::Webflow::VERSION
-  spec.authors       = ["Andrew Gertig"]
-  spec.email         = ["andrew.gertig@gmail.com"]
+  spec.authors       = ["Andrew"]
+  spec.email         = ["andrew@wrkhq.com"]
 
   spec.summary       = %q{Omniauth strategy for Webflow}
   spec.description   = %q{Omniauth strategy for Webflow}
-  spec.homepage      = "https://github.com/gertig/omniauth-webflow"
+  spec.homepage      = "https://github.com/wrk-corp/omniauth-webflow"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/gertig/omniauth-webflow"
+  spec.metadata["source_code_uri"] = "https://github.com/wrk-corp/omniauth-webflow"
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.

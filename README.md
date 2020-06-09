@@ -1,10 +1,18 @@
-# Omniauth::Webflow
+# omniauth-webflow
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/webflow`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem is an [OmniAuth 1.0](https://github.com/omniauth/omniauth) Strategy for authenticating with the [Webflow API](https://developers.webflow.com/) (version 1.0.0)
 
-TODO: Delete this and the text above, and describe your gem
+## Setup
 
-## Installation
+First, you will need to register your application with Webflow. This can be done on the [Integrations](https://webflow.com/dashboard/account/integrations) tab.
+
+**Important:** your callback URL should be specified as `https://[hostname]/auth/webflow/callback`
+
+In order to authenticate with Webflow in both development and production we recommend registering a "-dev" app with Webflow that points at your localhost app. One thing to note here is that Webflow requires your callback url to be `https`.
+
+After registering a new application with Webflow take note of the `client_id` and `client_secret` provided. You should put these into your Rails credentials or store them as environment variables like `ENV['WEBFLOW_CLIENT_ID']` and `ENV['WEBFLOW_CLIENT_SECRET']`
+
+## Usage
 
 Add this line to your application's Gemfile:
 
@@ -16,24 +24,17 @@ And then execute:
 
     $ bundle install
 
-Or install it yourself as:
+In your Rails app, add the Webflow provider to your Omniauth middleware, e.g. in a file like `config/initializers/omniauth.rb`:
 
-    $ gem install omniauth-webflow
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :webflow, ENV['WEBFLOW_CLIENT_ID'], ENV['WEBFLOW_CLIENT_SECRET']
+end
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/omniauth-webflow. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/omniauth-webflow/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/wrk-corp/omniauth-webflow. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/wrk-corp/omniauth-webflow/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -41,4 +42,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Omniauth::Webflow project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/omniauth-webflow/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Omniauth::Webflow project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/wrk-corp/omniauth-webflow/blob/master/CODE_OF_CONDUCT.md).

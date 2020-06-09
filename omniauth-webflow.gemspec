@@ -1,4 +1,4 @@
-require_relative 'lib/omniauth/webflow/version'
+require_relative 'lib/omniauth-webflow/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-webflow"
@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
   # spec.add_runtime_dependency 'omniauth-oauth2'
   # spec.add_runtime_dependency 'multi_json'
 
-  spec.add_dependency 'omniauth-oauth2'
-  spec.add_dependency 'multi_json'
+  spec.add_dependency 'omniauth-oauth2', '~> 1.6.0'
+  spec.add_dependency 'multi_json', '~> 1.13.1'
 end

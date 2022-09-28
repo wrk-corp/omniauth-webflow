@@ -46,7 +46,7 @@ GEM
     omniauth-oauth2 (1.7.2)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
-    rack (2.2.3)
+    rack (2.2.4)
     rack-protection (2.1.0)
       rack
     rake (12.3.3)

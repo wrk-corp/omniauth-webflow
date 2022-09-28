@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-webflow (0.1.1)
+    omniauth-webflow (0.2.1)
       multi_json (~> 1.15)
       omniauth-oauth2 (~> 1.7)
 

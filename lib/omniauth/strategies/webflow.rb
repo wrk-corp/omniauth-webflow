@@ -11,6 +11,10 @@ module OmniAuth
         authorize_url: 'https://webflow.com/oauth/authorize',
         token_url: 'https://api.webflow.com/oauth/access_token'
       }
+      option :token_options, {
+        client_id: options.client_id,
+        client_secret: options.client_secret,
+      }
 
       uid { raw_info['_id'] }
 

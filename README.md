@@ -1,6 +1,6 @@
 # omniauth-webflow
 
-This gem is an [OmniAuth 1.0](https://github.com/omniauth/omniauth) Strategy for authenticating with the [Webflow API](https://developers.webflow.com/) (version 1.0.0)
+This gem is an [OmniAuth](https://github.com/omniauth/omniauth) Strategy for authenticating with the [Webflow API](https://developers.webflow.com/)
 
 ## Setup
 
@@ -17,7 +17,7 @@ After registering a new application with Webflow take note of the `client_id` an
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'omniauth-webflow'
+gem 'omniauth-webflow', '~> 1.0.0'
 ```
 
 And then execute:
@@ -28,9 +28,12 @@ In your Rails app, add the Webflow provider to your Omniauth middleware, e.g. in
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :webflow, ENV['WEBFLOW_CLIENT_ID'], ENV['WEBFLOW_CLIENT_SECRET']
+  provider :webflow, ENV['WEBFLOW_CLIENT_ID'], ENV['WEBFLOW_CLIENT_SECRET'],
+  scope: 'authorized_user:read' # the scope is an example and not required
 end
 ```
+
+Specify [scopes](https://docs.developers.webflow.com/reference/scopes) as required.
 
 ## Contributing
 

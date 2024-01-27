@@ -41,7 +41,7 @@ module OmniAuth
       # This also means that you can not pass other url parameters through the redirect_uri.
       def build_access_token
         verifier = request.params['code']
-        uri = Addressable::URI.parse(callback_url)
+        uri = ::Addressable::URI.parse(callback_url)
         redirect_uri = uri.omit(:query).to_s
         client.auth_code.get_token(verifier, { redirect_uri: redirect_uri }.merge(token_params.to_hash(symbolize_keys: true)), deep_symbolize(options.auth_token_params))
       end

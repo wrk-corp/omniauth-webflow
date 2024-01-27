@@ -29,5 +29,4 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'omniauth-oauth2', '~> 1.7'
   spec.add_dependency 'multi_json', '~> 1.15'
-  spec.add_dependency 'addressable', '~> 2.7'
 end

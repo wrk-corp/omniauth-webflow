@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-webflow (0.2.1)
+    omniauth-webflow (1.0.0)
       multi_json (~> 1.15)
       omniauth-oauth2 (~> 1.7)
 
@@ -41,7 +41,7 @@ GEM
       rack (>= 1.2, < 3)
     omniauth (2.0.4)
       hashie (>= 3.4.6)
-      rack (>= 1.6.2, < 3)
+      rack (>= 2.2.3)
       rack-protection
     omniauth-oauth2 (1.7.2)
       oauth2 (~> 1.4)

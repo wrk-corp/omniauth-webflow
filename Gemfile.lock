@@ -1,53 +1,41 @@
 PATH
   remote: .
   specs:
-    omniauth-webflow (0.2.1)
+    omniauth-webflow (1.0.0)
       multi_json (~> 1.15)
       omniauth-oauth2 (~> 1.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    base64 (0.2.0)
     diff-lcs (1.3)
-    faraday (1.8.0)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0.1)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.1)
-      faraday-patron (~> 1.0)
-      faraday-rack (~> 1.0)
-      multipart-post (>= 1.2, < 3)
+    faraday (2.8.1)
+      base64
+      faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.0)
-    faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
-    faraday-rack (1.0.0)
+    faraday-net_http (3.0.2)
     hashie (5.0.0)
-    jwt (2.3.0)
+    jwt (2.9.3)
+      base64
     multi_json (1.15.0)
     multi_xml (0.6.0)
-    multipart-post (2.1.1)
-    oauth2 (1.4.7)
-      faraday (>= 0.8, < 2.0)
+    oauth2 (2.0.9)
+      faraday (>= 0.17.3, < 3.0)
       jwt (>= 1.0, < 3.0)
-      multi_json (~> 1.3)
       multi_xml (~> 0.5)
-      rack (>= 1.2, < 3)
-    omniauth (2.0.4)
+      rack (>= 1.2, < 4)
+      snaky_hash (~> 2.0)
+      version_gem (~> 1.1)
+    omniauth (2.1.2)
       hashie (>= 3.4.6)
-      rack (>= 1.6.2, < 3)
+      rack (>= 2.2.3)
       rack-protection
-    omniauth-oauth2 (1.7.2)
-      oauth2 (~> 1.4)
-      omniauth (>= 1.9, < 3)
-    rack (2.2.3)
-    rack-protection (2.1.0)
+    omniauth-oauth2 (1.8.0)
+      oauth2 (>= 1.4, < 3)
+      omniauth (~> 2.0)
+    rack (3.1.8)
+    rack-protection (3.0.6)
       rack
     rake (12.3.3)
     rspec (3.9.0)
@@ -64,6 +52,10 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
     ruby2_keywords (0.0.5)
+    snaky_hash (2.0.1)
+      hashie
+      version_gem (~> 1.1, >= 1.1.1)
+    version_gem (1.1.4)
 
 PLATFORMS
   ruby
@@ -74,4 +66,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   2.1.2
+   2.2.27

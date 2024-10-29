@@ -31,16 +31,10 @@ module OmniAuth
         @raw_info ||= access_token.get('https://api.webflow.com/v2/token/introspect').parsed
       end
 
-      protected
-
-      # callback_url includes the code parameter and Webflow decided to change their API recently
-      # to require the redirect_uri to match exactly what you have in your Webflow Application settings.
-      # This also means that you can not pass other url parameters through the redirect_uri.
-      def build_access_token
-        verifier = request.params['code']
-        uri = Addressable::URI.parse(callback_url)
-        redirect_uri = uri.omit(:query).to_s
-        client.auth_code.get_token(verifier, { redirect_uri: redirect_uri }.merge(token_params.to_hash(symbolize_keys: true)), deep_symbolize(options.auth_token_params))
+      # The Webflow API requires the redirect_uri to match exactly what you have in your Webflow Application settings
+      # This method ensures any query params are removed before the build_access_token step occurs
+      def callback_url
+        full_host + callback_path
       end
     end
   end
